@@ -5,13 +5,13 @@ WORKDIR /app
 # Install pnpm
 RUN npm install -g pnpm
 
-# Copy package files
+# Copy package files first
 COPY package.json pnpm-lock.yaml ./
 
-# Install dependencies
+# Install dependencies (node_modules won't be copied from host due to .dockerignore)
 RUN pnpm install --frozen-lockfile
 
-# Copy source code
+# Copy source code (excluding node_modules)
 COPY . .
 
 # Build the application
