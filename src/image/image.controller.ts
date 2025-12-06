@@ -8,7 +8,13 @@ import {
   BadRequestException,
 } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
-import { ApiOperation, ApiResponse, ApiTags, ApiConsumes, ApiBody } from '@nestjs/swagger';
+import {
+  ApiOperation,
+  ApiResponse,
+  ApiTags,
+  ApiConsumes,
+  ApiBody,
+} from '@nestjs/swagger';
 import { ImageService } from './image.service';
 import { ImageActionDto } from './dto/image-action.dto';
 import { AnalyzeImageDto } from './dto/analyze-image.dto';
@@ -100,6 +106,10 @@ export class ImageController {
 
     const base64Image = `data:${file.mimetype};base64,${file.buffer.toString('base64')}`;
 
-    return this.imageService.estimateAge(base64Image, dto.provider, dto.modelName);
+    return this.imageService.estimateAge(
+      base64Image,
+      dto.provider,
+      dto.modelName,
+    );
   }
 }

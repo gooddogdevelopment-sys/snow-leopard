@@ -62,9 +62,7 @@ export class ImageService {
 
     return Object.assign(new ChatResponseDto(), {
       provider,
-      model:
-        modelName ||
-        (provider === 'ollama' ? 'llama3.2-vision' : 'gemini-1.5-flash'),
+      model: modelName,
       responseContent: response.content as string,
     });
   }
@@ -92,9 +90,7 @@ export class ImageService {
 
     return Object.assign(new ChatResponseDto(), {
       provider,
-      model:
-        modelName ||
-        (provider === 'ollama' ? 'llama3.2-vision' : 'gemini-1.5-flash'),
+      model: modelName,
       responseContent: response.content as string,
     });
   }
