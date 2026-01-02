@@ -10,7 +10,7 @@ export class LlmPromptsService {
   constructor(
     @InjectRepository(LlmPrompt)
     private readonly llmPromptRepository: Repository<LlmPrompt>,
-  ) { }
+  ) {}
   create(createLlmPromptDto: CreateLlmPromptDto): Promise<LlmPrompt> {
     return this.llmPromptRepository.save(createLlmPromptDto);
   }
@@ -27,7 +27,10 @@ export class LlmPromptsService {
     return prompt;
   }
 
-  async update(id: string, updateLlmPromptDto: UpdateLlmPromptDto): Promise<LlmPrompt> {
+  async update(
+    id: string,
+    updateLlmPromptDto: UpdateLlmPromptDto,
+  ): Promise<LlmPrompt> {
     await this.llmPromptRepository.update(id, updateLlmPromptDto);
     return await this.findOne(id);
   }

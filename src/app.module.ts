@@ -30,4 +30,4 @@ import { LlmPromptsModule } from './llm-prompts/llm-prompts.module';
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule { }
+export class AppModule {}

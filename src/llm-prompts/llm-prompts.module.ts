@@ -9,4 +9,4 @@ import { LlmPrompt } from './entities/llm-prompt.entity';
   controllers: [LlmPromptsController],
   providers: [LlmPromptsService],
 })
-export class LlmPromptsModule { }
+export class LlmPromptsModule {}
