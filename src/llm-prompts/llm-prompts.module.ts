@@ -8,5 +8,6 @@ import { LlmPrompt } from './entities/llm-prompt.entity';
   imports: [TypeOrmModule.forFeature([LlmPrompt])],
   controllers: [LlmPromptsController],
   providers: [LlmPromptsService],
+  exports: [LlmPromptsService],
 })
-export class LlmPromptsModule {}
+export class LlmPromptsModule { }

@@ -5,6 +5,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { LlmPromptsModule } from './llm-prompts/llm-prompts.module';
 import { HealthModule } from './health/health.module';
+import { ImageAnalyticsModule } from './image-analytics/image-analytics.module';
 
 @Module({
   imports: [
@@ -27,6 +28,7 @@ import { HealthModule } from './health/health.module';
       inject: [ConfigService],
     }),
     LlmPromptsModule,
+    ImageAnalyticsModule,
     HealthModule
   ],
   controllers: [AppController],
