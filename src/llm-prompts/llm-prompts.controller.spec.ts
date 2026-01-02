@@ -8,7 +8,18 @@ describe('LlmPromptsController', () => {
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       controllers: [LlmPromptsController],
-      providers: [LlmPromptsService],
+      providers: [
+        {
+          provide: LlmPromptsService,
+          useValue: {
+            create: jest.fn(),
+            findAll: jest.fn(),
+            findOne: jest.fn(),
+            update: jest.fn(),
+            remove: jest.fn(),
+          },
+        },
+      ],
     }).compile();
 
     controller = module.get<LlmPromptsController>(LlmPromptsController);
