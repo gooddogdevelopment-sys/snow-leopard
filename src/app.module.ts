@@ -4,6 +4,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { LlmPromptsModule } from './llm-prompts/llm-prompts.module';
+import { HealthModule } from './health/health.module';
 
 @Module({
   imports: [
@@ -26,8 +27,9 @@ import { LlmPromptsModule } from './llm-prompts/llm-prompts.module';
       inject: [ConfigService],
     }),
     LlmPromptsModule,
+    HealthModule
   ],
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {}
+export class AppModule { }
