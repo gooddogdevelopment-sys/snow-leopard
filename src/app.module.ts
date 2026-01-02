@@ -29,9 +29,9 @@ import { ImageAnalyticsModule } from './image-analytics/image-analytics.module';
     }),
     LlmPromptsModule,
     ImageAnalyticsModule,
-    HealthModule
+    HealthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule { }
+export class AppModule {}

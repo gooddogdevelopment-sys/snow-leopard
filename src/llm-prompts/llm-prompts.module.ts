@@ -10,4 +10,4 @@ import { LlmPrompt } from './entities/llm-prompt.entity';
   providers: [LlmPromptsService],
   exports: [LlmPromptsService],
 })
-export class LlmPromptsModule { }
+export class LlmPromptsModule {}
